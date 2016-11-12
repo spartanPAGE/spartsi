@@ -10,6 +10,6 @@ enable_testing(true)
 include_directories(
     ${PROJECT_SOURCE_DIR}/src
 )
-set(SOURCE_FILES test/main.cpp test/example_test.cpp)
+set(SOURCE_FILES main.cpp test/example_test.cpp)
 
 add_executable(spartsi ${SOURCE_FILES})
