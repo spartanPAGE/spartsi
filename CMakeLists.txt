@@ -3,5 +3,13 @@ project(spartsi)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
 
-set(SOURCE_FILES main.cpp)
+# Includes Catch in the project;
+include_directories(external/Catch/single_include)
+enable_testing(true)
+
+include_directories(
+    ${PROJECT_SOURCE_DIR}/src
+)
+set(SOURCE_FILES test/main.cpp test/example_test.cpp)
+
 add_executable(spartsi ${SOURCE_FILES})
