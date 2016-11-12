@@ -1,8 +1,7 @@
 #define CATCH_CONFIG_RUNNER
 #include "catch.hpp"
 
-int main( int argc, char const * const argv[] )
-{
+int main(int argc, char const * const argv[]) {
     Catch::Session session; // There must be exactly once instance
 
     // writing to session.configData() here sets defaults
