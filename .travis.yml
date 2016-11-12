@@ -13,7 +13,7 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-5.4
-      env: COMPILER=g++-5.4
+      env: COMPILER=g++-6
     - compiler: clang
       addons:
         apt:
