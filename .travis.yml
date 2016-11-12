@@ -1,3 +1,5 @@
+before_install:
+- git submodule update --init --recursive
 script:
   - mkdir build
   - cd build
