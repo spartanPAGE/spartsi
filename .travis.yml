@@ -1,6 +1,7 @@
 language: cpp
 sudo: required
 script:
+  - git pull --recurse-submodules
   - mkdir build
   - cd build
   - cmake .. && make
