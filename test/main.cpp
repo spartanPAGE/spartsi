@@ -1,5 +1,5 @@
 #define CATCH_CONFIG_RUNNER
-#include "../external/Catch/catch.hpp"
+#include "catch.hpp"
 
 int main( int argc, char const * const argv[] )
 {
