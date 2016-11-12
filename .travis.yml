@@ -1,7 +1,8 @@
 language: cpp
 sudo: required
+before_install:
+  - git submodule update --init --recursive
 script:
-  - git pull --recurse-submodules
   - mkdir build
   - cd build
   - cmake .. && make
