@@ -1,6 +1,9 @@
 language: cpp
 sudo: required
-script: cmake
+script:
+  - mkdir build
+  - cd build
+  - cmake .. && make
 matrix:
   include:
     - compiler: gcc
