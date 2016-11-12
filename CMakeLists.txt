@@ -7,7 +7,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 include_directories(external/Catch/single_include)
 
 include_directories(
-    ${PROJECT_SOURCE_DIR}/src
+    src
 )
 
 set(SOURCE_FILES test/main.cpp test/example_test.cpp)
