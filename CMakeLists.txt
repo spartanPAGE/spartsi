@@ -4,7 +4,7 @@ project(spartsi)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
 
 # Includes Catch in the project;
-include_directories(external/Catch/single_include)
+include_directories(external/Catch)
 enable_testing(true)
 
 include_directories(
