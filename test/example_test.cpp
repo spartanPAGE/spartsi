@@ -1,4 +1,4 @@
-#include "../external/Catch/catch.hpp"
+#include "catch.hpp"
 
 TEST_CASE("example test") {
     REQUIRE(1 == true);
