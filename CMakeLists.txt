@@ -41,7 +41,9 @@ set(SOURCE_FILES
     test/main.cpp
     test/utensils/history_keeping_map_test.cpp
     test/elementary_types_test.cpp
-    src/unparse.cpp)
+    src/unparse.cpp
+    test/unparse_test.cpp
+)
 
 add_executable(spartsi ${SOURCE_FILES})
 
