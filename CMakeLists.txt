@@ -6,7 +6,27 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
 # Includes Catch in the project;
 include_directories(external/Catch/single_include)
 
-include_directories(${CMAKE_SOURCE_DIR}/src)
+include_directories(
+    ${CMAKE_SOURCE_DIR}/src
+    ${CMAKE_SOURCE_DIR}/external/boost/config/include
+    ${CMAKE_SOURCE_DIR}/external/boost/assert/include
+    ${CMAKE_SOURCE_DIR}/external/boost/static_assert/include
+    ${CMAKE_SOURCE_DIR}/external/boost/intrusive/include
+    ${CMAKE_SOURCE_DIR}/external/boost/type_traits/include
+    ${CMAKE_SOURCE_DIR}/external/boost/core/include
+    ${CMAKE_SOURCE_DIR}/external/boost/move/include
+    ${CMAKE_SOURCE_DIR}/external/boost/variant/include
+    ${CMAKE_SOURCE_DIR}/external/boost/container/include
+    ${CMAKE_SOURCE_DIR}/external/boost/unordered/include
+    ${CMAKE_SOURCE_DIR}/external/boost/functional/include
+    ${CMAKE_SOURCE_DIR}/external/boost/iterator/include
+    ${CMAKE_SOURCE_DIR}/external/boost/mpl/include
+    ${CMAKE_SOURCE_DIR}/external/boost/preprocessor/include
+    ${CMAKE_SOURCE_DIR}/external/boost/detail/include
+    ${CMAKE_SOURCE_DIR}/external/boost/tuple/include
+    ${CMAKE_SOURCE_DIR}/external/boost/throw_exception/include
+    ${CMAKE_SOURCE_DIR}/external/boost/integer/include
+)
 
 set(SOURCE_FILES
     test/main.cpp

@@ -1,6 +1,57 @@
 [submodule "external/Catch"]
 	path = external/Catch
 	url = https://github.com/philsquared/Catch
-[submodule "external/variant"]
-	path = external/variant
+[submodule "external/boost/variant"]
+	path = external/boost/variant
 	url = https://github.com/boostorg/variant
+[submodule "external/boost/container"]
+	path = external/boost/container
+	url = https://github.com/boostorg/container
+[submodule "external/boost/config"]
+	path = external/boost/config
+	url = https://github.com/boostorg/config
+[submodule "external/boost/move"]
+	path = external/boost/move
+	url = https://github.com/boostorg/move
+[submodule "external/boost/assert"]
+	path = external/boost/assert
+	url = https://github.com/boostorg/assert
+[submodule "external/boost/static_assert"]
+	path = external/boost/static_assert
+	url = https://github.com/boostorg/static_assert
+[submodule "external/boost/intrusive"]
+	path = external/boost/intrusive
+	url = https://github.com/boostorg/intrusive
+[submodule "external/boost/type_traits"]
+	path = external/boost/type_traits
+	url = https://github.com/boostorg/type_traits
+[submodule "external/boost/core"]
+	path = external/boost/core
+	url = https://github.com/boostorg/core
+[submodule "external/boost/unordered"]
+	path = external/boost/unordered
+	url = https://github.com/boostorg/unordered
+[submodule "external/boost/functional"]
+	path = external/boost/functional
+	url = https://github.com/boostorg/functional
+[submodule "external/boost/iterator"]
+	path = external/boost/iterator
+	url = https://github.com/boostorg/iterator
+[submodule "external/boost/mpl"]
+	path = external/boost/mpl
+	url = https://github.com/boostorg/mpl
+[submodule "external/boost/preprocessor"]
+	path = external/boost/preprocessor
+	url = https://github.com/boostorg/preprocessor
+[submodule "external/boost/detail"]
+	path = external/boost/detail
+	url = https://github.com/boostorg/detail
+[submodule "external/boost/tuple"]
+	path = external/boost/tuple
+	url = https://github.com/boostorg/tuple
+[submodule "external/boost/throw_exception"]
+	path = external/boost/throw_exception
+	url = https://github.com/boostorg/throw_exception
+[submodule "external/boost/integer"]
+	path = external/boost/integer
+	url = https://github.com/boostorg/integer
