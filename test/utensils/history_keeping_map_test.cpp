@@ -1,7 +1,8 @@
 #include "utensils/history_keeping_map.h"
 #include "catch.hpp"
+#include <unordered_map>
 
-using hkmap = spartsi::history_keeping_map<int, int>;
+using hkmap = spartsi::history_keeping_map<std::unordered_map<int, int>>;
 using history = typename hkmap::history_type;
 
 TEST_CASE("map can be created", "[spartsi::history_keeping_map]") {

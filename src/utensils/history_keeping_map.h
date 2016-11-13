@@ -11,12 +11,12 @@ namespace spartsi {
     // and becouse we want O(1) access (instead of O(n)), there shall be implemented container
     // with O(1) access and insertion history keeping
     // (the class shown below)
-    template<typename Key, typename T>
+    template<typename Dict>
     class history_keeping_map {
     public:
-        using key_type = Key;
-        using mapped_type = T;
-        using data_type = std::unordered_map<key_type, mapped_type>;
+        using data_type = Dict;
+        using key_type = typename data_type::key_type;
+        using mapped_type = typename data_type::mapped_type;
         using value_type = typename data_type::value_type;
         using history_type = std::vector<key_type>;
 
