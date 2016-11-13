@@ -45,8 +45,14 @@ TEST_CASE("history is being properly remembered", "[spartsi::history_keeping_map
         REQUIRE(subject.history() == desired_result);
     }
 
-    SECTION("with [] accessor") {
+    SECTION("with [] accessor and new key") {
         subject[3] = 4;
+        REQUIRE(subject.history() == desired_result);
+    }
+
+    SECTION("with [] accessor and key that`s already present in the container") {
+        subject[0] = 2;
+        history desired_result = {0, 1, 2};
         REQUIRE(subject.history() == desired_result);
     }
 
