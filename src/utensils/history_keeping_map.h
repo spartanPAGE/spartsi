@@ -96,7 +96,7 @@ namespace spartsi {
         template<typename InputIterator>
         void set_keys_history(InputIterator first, InputIterator last) {
             keys_history = history_type(std::distance(first, last));
-            std::transform(first, last, std::begin(keys_history), [](auto &&pair) {
+            std::transform(first, last, std::begin(keys_history), [](value_type &&pair) {
                 return pair.first;
             });
         }
