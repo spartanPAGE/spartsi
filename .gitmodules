@@ -7,9 +7,6 @@
 [submodule "external/boost/container"]
 	path = external/boost/container
 	url = https://github.com/boostorg/container
-[submodule "external/boost/config"]
-	path = external/boost/config
-	url = https://github.com/boostorg/config
 [submodule "external/boost/move"]
 	path = external/boost/move
 	url = https://github.com/boostorg/move
@@ -55,3 +52,6 @@
 [submodule "external/boost/integer"]
 	path = external/boost/integer
 	url = https://github.com/boostorg/integer
+[submodule "external/boost/config"]
+	path = external/boost/config
+	url = https://github.com/boostorg/config
