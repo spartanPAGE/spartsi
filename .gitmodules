@@ -55,3 +55,6 @@
 [submodule "external/boost/static_assert"]
 	path = external/boost/static_assert
 	url = https://github.com/boostorg/static_assert
+[submodule "external/boost/utility"]
+	path = external/boost/utility
+	url = https://github.com/boostorg/utility
