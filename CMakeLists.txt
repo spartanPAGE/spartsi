@@ -35,7 +35,7 @@ include_directories(
 set(SOURCE_FILES
     test/main.cpp
     test/utensils/history_keeping_map_test.cpp
-    test/elementary-types.cpp
+    test/elementary_types_test.cpp
 )
 
 add_executable(spartsi ${SOURCE_FILES})

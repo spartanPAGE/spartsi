@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "elementary-types.h"
+#include "elementary_types.h"
 
 namespace spartsi {
     namespace unparsed {

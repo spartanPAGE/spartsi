@@ -1,4 +1,4 @@
-#include "elementary-types.h"
+#include "elementary_types.h"
 #include "catch.hpp"
 
 TEST_CASE("everything compiles well", "[spartsi::elementary_types*") {
