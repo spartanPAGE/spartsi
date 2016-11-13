@@ -19,9 +19,6 @@
 [submodule "external/boost/intrusive"]
 	path = external/boost/intrusive
 	url = https://github.com/boostorg/intrusive
-[submodule "external/boost/type_traits"]
-	path = external/boost/type_traits
-	url = https://github.com/boostorg/type_traits
 [submodule "external/boost/core"]
 	path = external/boost/core
 	url = https://github.com/boostorg/core
@@ -55,3 +52,6 @@
 [submodule "external/boost/config"]
 	path = external/boost/config
 	url = https://github.com/boostorg/config
+[submodule "external/boost/type_traits"]
+	path = external/boost/type_traits
+	url = https://github.com/boostorg/type_traits
