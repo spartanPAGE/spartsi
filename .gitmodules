@@ -16,9 +16,6 @@
 [submodule "external/boost/intrusive"]
 	path = external/boost/intrusive
 	url = https://github.com/boostorg/intrusive
-[submodule "external/boost/core"]
-	path = external/boost/core
-	url = https://github.com/boostorg/core
 [submodule "external/boost/unordered"]
 	path = external/boost/unordered
 	url = https://github.com/boostorg/unordered
@@ -58,3 +55,6 @@
 [submodule "external/boost/utility"]
 	path = external/boost/utility
 	url = https://github.com/boostorg/utility
+[submodule "external/boost/core"]
+	path = external/boost/core
+	url = https://github.com/boostorg/core
