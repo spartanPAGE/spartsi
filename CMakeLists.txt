@@ -30,13 +30,18 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/external/boost/variant/include
     ${CMAKE_SOURCE_DIR}/external/boost/type_index/include
     ${CMAKE_SOURCE_DIR}/external/boost/math/include
+    ${CMAKE_SOURCE_DIR}/external/boost/algorithm/include
+    ${CMAKE_SOURCE_DIR}/external/boost/range/include
+    ${CMAKE_SOURCE_DIR}/external/boost/concept_check/include
+    ${CMAKE_SOURCE_DIR}/external/boost/function/include
+    ${CMAKE_SOURCE_DIR}/external/boost/bind/include
 )
 
 set(SOURCE_FILES
     test/main.cpp
     test/utensils/history_keeping_map_test.cpp
     test/elementary_types_test.cpp
-)
+    src/unparse.cpp)
 
 add_executable(spartsi ${SOURCE_FILES})
 
