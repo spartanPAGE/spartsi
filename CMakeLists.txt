@@ -26,6 +26,7 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/external/boost/tuple/include
     ${CMAKE_SOURCE_DIR}/external/boost/throw_exception/include
     ${CMAKE_SOURCE_DIR}/external/boost/integer/include
+    ${CMAKE_SOURCE_DIR}/external/boost/utility/include
 )
 
 set(SOURCE_FILES
