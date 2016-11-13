@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.7)
 project(spartsi)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 
 # Includes Catch in the project;
 include_directories(external/Catch/single_include)
@@ -27,6 +27,9 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/external/boost/throw_exception/include
     ${CMAKE_SOURCE_DIR}/external/boost/integer/include
     ${CMAKE_SOURCE_DIR}/external/boost/utility/include
+    ${CMAKE_SOURCE_DIR}/external/boost/variant/include
+    ${CMAKE_SOURCE_DIR}/external/boost/type_index/include
+    ${CMAKE_SOURCE_DIR}/external/boost/math/include
 )
 
 set(SOURCE_FILES
