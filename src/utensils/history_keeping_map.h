@@ -39,6 +39,22 @@ namespace spartsi {
             }
         }
 
+        const_iterator begin() const {
+            return std::begin(data);
+        }
+
+        iterator begin() {
+            return std::begin(data);
+        }
+
+        const_iterator end() const {
+            return std::end(data);
+        }
+
+        iterator end() {
+            return std::end(data);
+        }
+
         std::size_t erase(key_type const &k) {
             if(data.count(k)) {
                 keys_history.erase(
