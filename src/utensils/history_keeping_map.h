@@ -88,7 +88,7 @@ namespace spartsi {
             return data.at(k);
         }
 
-        mapped_type const &at(key_type &k) const {
+        mapped_type const &at(const key_type &k) const {
             return data.at(k);
         }
 
