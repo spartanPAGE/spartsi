@@ -107,3 +107,43 @@ TEST_CASE("unparse(attribute)", "[spartsi::unparse*]") {
         REQUIRE(result == desired_result);
     }
 }
+
+TEST_CASE("unparse(ref_attribute)", "[spartsi::unparse*]") {
+    SECTION("empty attribute") {
+        spartsi::ref_attribute attr = {};
+        auto result = spartsi::unparse("ref", attr);
+        spartsi::lines desired_declaration = {
+            "ref attr ref"
+        };
+        spartsi::lines desired_definition = {
+            "ref attr ref \"\""
+        };
+
+        REQUIRE(result.first == desired_declaration);
+        REQUIRE(result.second == desired_definition);
+    }
+
+    SECTION("full-blown attribute") {
+        spartsi::ref_attribute attr = {
+            "v1\nv2\nv3", "declc1\ndeclc2\ndeclc3", "defc1\ndefc2\ndefc3"
+        };
+        auto result = spartsi::unparse("ref", attr);
+        spartsi::lines desired_declaration = {
+            ":: declc1",
+            ":: declc2",
+            ":: declc3",
+            "ref attr ref"
+        };
+        spartsi::lines desired_definition = {
+            ":: defc1",
+            ":: defc2",
+            ":: defc3",
+            "ref attr ref \"v1\"",
+            "             \"v2\"",
+            "             \"v3\""
+        };
+
+        REQUIRE(result.first == desired_declaration);
+        REQUIRE(result.second == desired_definition);
+    }
+}

@@ -39,9 +39,7 @@ namespace spartsi {
         auto comment_lines = unparse_comment(attribute.comment);
         auto value_lines = unparse_attribute_value(attribute.value);
 
-        std::for_each(std::begin(value_lines) + 1, std::end(value_lines), [&generic_attr_declaration](std::string &line) {
-            line = std::string(generic_attr_declaration.size(), ' ') + line;
-        });
+        indent(std::begin(value_lines)+1, std::end(value_lines), generic_attr_declaration.size());
 
         result.reserve(comment_lines.size() + value_lines.size() + 1);
         result.insert(std::end(result), std::begin(comment_lines), std::end(comment_lines));
@@ -49,6 +47,38 @@ namespace spartsi {
         result.insert(std::end(result), std::begin(value_lines) + 1, std::end(value_lines));
 
         return result;
+    }
+
+    unparsed::declaration unparse_ref_attr_declaration(std::string const &name, spartsi::ref_attribute const &attribute) {
+        unparsed::declaration declaration;
+        auto ref_attr_declaration = "ref attr " + name;
+        auto declaration_comments = unparse_comment(attribute.comment);
+        declaration.reserve(declaration_comments.size() + 1);
+        declaration.insert(std::end(declaration), std::begin(declaration_comments), std::end(declaration_comments));
+        declaration.push_back(ref_attr_declaration);
+        return declaration;
+    }
+
+    //TODO: extract common function of unparse(attr) and unparse(ref_attr)
+    unparsed::definition unparse_ref_attr_definition(std::string const &name, spartsi::ref_attribute const &attribute) {
+        unparsed::definition definition;
+        auto generic_ref_attr_definition = "ref attr " + name + " ";
+        auto definition_comments = unparse_comment(attribute.ref_comment);
+        auto value_lines = unparse_attribute_value(attribute.value);
+        indent(std::begin(value_lines)+1, std::end(value_lines), generic_ref_attr_definition.size());
+        definition.reserve(definition_comments.size() + value_lines.size() + 1);
+        definition.insert(std::end(definition), std::begin(definition_comments), std::end(definition_comments));
+        definition.push_back(generic_ref_attr_definition + value_lines[0]);
+        definition.insert(std::end(definition), std::begin(value_lines) + 1, std::end(value_lines));
+        return definition;
+    }
+
+    unparsed::pair unparse(std::string const &name, spartsi::ref_attribute const &attribute) {
+        assert(!name.empty());
+        return std::make_pair(
+            unparse_ref_attr_declaration(name, attribute),
+            unparse_ref_attr_definition(name, attribute)
+        );
     }
 
     lines unparse(spartsi::tree const &tree) {

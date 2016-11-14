@@ -13,11 +13,20 @@ namespace spartsi {
         using pair = std::pair<declaration, definition>;
     }
 
+    template<typename It>
+    void indent(It first, It last, size_t no) {
+        std::for_each(first, last, [no](std::string &line) {
+            line = std::string(no, ' ') + line;
+        });
+    }
+
     lines unparse_attribute_value(std::string const &val);
 
     lines unparse_comment(std::string const &val);
 
     lines unparse(std::string const &name, spartsi::attribute const &attribute);
+
+    unparsed::pair unparse(std::string const &name, spartsi::ref_attribute const &attribute);
 
     lines unparse(spartsi::tree const &tree);
 }
