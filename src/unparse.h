@@ -28,5 +28,7 @@ namespace spartsi {
 
     unparsed::pair unparse(std::string const &name, spartsi::ref_attribute const &attribute);
 
+    unparsed::pair unparse(spartsi::attributes_map const &attrs);
+
     lines unparse(spartsi::tree const &tree);
 }

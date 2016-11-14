@@ -81,6 +81,34 @@ namespace spartsi {
         );
     }
 
+    unparsed::pair unparse(std::string const &name, spartsi::attribute_variant const &variant) {
+        switch(variant.which()) {
+            case VA_ATTR:
+                return {unparse(name, boost::get<spartsi::attribute>(variant)), {}};
+            case VA_REF_ATTR:
+                return unparse(name, boost::get<spartsi::ref_attribute>(variant));
+            default:
+                assert(false); //impossible
+                return {};
+        }
+        return {};
+    }
+
+    unparsed::pair unparse(spartsi::attributes_map const &attrs) {
+        unparsed::declaration decl;
+        unparsed::definition def;
+
+        auto const &history = attrs.history();
+        for(auto const &key: history) {
+            auto const &variant = attrs.at(key);
+            auto subresult = unparse(key, variant);
+            decl.insert(std::end(decl), std::begin(subresult.first), std::end(subresult.first));
+            def.insert(std::end(def), std::begin(subresult.second), std::end(subresult.second));
+        }
+
+        return { decl, def };
+    }
+
     lines unparse(spartsi::tree const &tree) {
         return {};
     }

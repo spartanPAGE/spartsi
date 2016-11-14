@@ -147,3 +147,38 @@ TEST_CASE("unparse(ref_attribute)", "[spartsi::unparse*]") {
         REQUIRE(result.second == desired_definition);
     }
 }
+
+TEST_CASE("unparse(attributes_map)", "[spartsi::unparse*]") {
+    SECTION("full-blown attributes_map") {
+        spartsi::attributes_map attrs = {
+            { "1st attr", spartsi::attribute { "val", "comment" } },
+            { "1st ref attr", spartsi::ref_attribute { "val", "comment", "ref comment" } },
+            { "2nd ref attr", spartsi::ref_attribute { "val1\nval2", "comment", "ref comment" } },
+            { "2nd attr", spartsi::attribute { "val1\nval2", "comment" } }
+        };
+
+        spartsi::lines desired_declaration = {
+            ":: comment",
+            "attr 1st attr \"val\"",
+            ":: comment",
+            "ref attr 1st ref attr",
+            ":: comment",
+            "ref attr 2nd ref attr",
+            ":: comment",
+            "attr 2nd attr \"val1\"",
+            "              \"val2\""
+        };
+
+        spartsi::lines desired_definition = {
+            ":: ref comment",
+            "ref attr 1st ref attr \"val\"",
+            ":: ref comment",
+            "ref attr 2nd ref attr \"val1\"",
+            "                      \"val2\""
+        };
+        auto result = spartsi::unparse(attrs);
+
+        REQUIRE(result.first == desired_declaration);
+        REQUIRE(result.second == desired_definition);
+    }
+}
