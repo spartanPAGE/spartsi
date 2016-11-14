@@ -15,6 +15,8 @@ namespace spartsi {
 
     lines unparse_attribute_value(std::string const &val);
 
+    lines unparse_comment(std::string const &val);
+
     lines unparse(spartsi::attribute const &attribute);
 
     lines unparse(spartsi::tree const &tree);
