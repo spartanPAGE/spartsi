@@ -16,11 +16,13 @@ namespace spartsi {
     struct ref_attribute {
         std::string value, comment, ref_comment;
     };
+    enum { VA_ATTR, VA_REF_ATTR };
     using attribute_variant = boost::variant<attribute, ref_attribute>;
     using attributes_map = map<name, attribute_variant>;
 
     struct node;
     struct ref_node;
+    enum { VA_NODE, VA_REF_NODE };
     using nodes_variant = boost::variant<node, ref_node>;
     using nodes_map = map<name, nodes_variant>;
 
